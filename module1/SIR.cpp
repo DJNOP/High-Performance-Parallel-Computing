@@ -57,7 +57,7 @@ int main(int argc, char* argv[]) {
     double t_end = 200.0;
 
     // write output every 1 day
-    double write_dt = 1.0;
+    double write_dt = 1;
 
     // How many Euler steps correspond to write_dt?
     double ratio = write_dt / dt;
