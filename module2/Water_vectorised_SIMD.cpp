@@ -13,49 +13,48 @@ const double deg2rad = acos(-1)/180.0;    // pi/180 for changing degs to radians
 double accumulated_forces_bond  = 0.;     // Checksum: accumulated size of forces
 double accumulated_forces_angle = 0.;     // Checksum: accumulated size of forces
 double accumulated_forces_non_bond = 0.;  // Checksum: accumulated size of forces
-constexpr size_t nClosest = 8;            // Number of closest neighbors to consider in neighbor list. 
-// constexpr just helps the compiler to optimize the code better
+constexpr size_t nClosest = 8;            // Number of closest neighbors to consider in neighbor list.
 
 class Vec3 {
 public:
     double x, y, z;
-    Vec3(double x, double y, double z): x(x), y(y), z(z) {} // initialization of vector
-    double mag2() const{                                    // squared size of vector (slightly faster)
+    Vec3(double x, double y, double z): x(x), y(y), z(z) {}
+    double mag2() const{
         return x*x+y*y+z*z;
     }
-    double mag() const{                                     // size of vector
-    return sqrt(mag2());
+    double mag() const{
+        return sqrt(mag2());
     }
-    Vec3 operator-(const Vec3& other) const{                // subtraction of two vectors
+    Vec3 operator-(const Vec3& other) const{
         return {x - other.x, y - other.y, z - other.z};
     }
-    Vec3 operator+(const Vec3& other) const{                // addition of two vectors
+    Vec3 operator+(const Vec3& other) const{
         return {x + other.x, y + other.y, z + other.z};
     }
-    Vec3 operator*(double scalar) const{                   // multiplication of vector by scalar (vec x scalar)
+    Vec3 operator*(double scalar) const{
         return {scalar*x, scalar*y, scalar*z};
     }
-    Vec3 operator/(double scalar) const{                  // division of vector by scalar
+    Vec3 operator/(double scalar) const{
         return {x/scalar, y/scalar, z/scalar};
     }
-    Vec3& operator+=(const Vec3& other){                 // add and assign to vector
+    Vec3& operator+=(const Vec3& other){
         x += other.x; y += other.y; z += other.z;
         return *this;
     }
-    Vec3& operator-=(const Vec3& other){                // subtract and assign to vector
+    Vec3& operator-=(const Vec3& other){
         x -= other.x; y -= other.y; z -= other.z;
         return *this;
     }
-    Vec3& operator*=(double scalar){                    // multiply and assign to vector
+    Vec3& operator*=(double scalar){
         x *= scalar; y *= scalar; z *= scalar;
         return *this;
     }
-    Vec3& operator/=(double scalar){                    // divide and assign to vector
+    Vec3& operator/=(double scalar){
         x /= scalar; y /= scalar; z /= scalar;
         return *this;
     }
 };
-Vec3 operator*(double scalar, const Vec3& y){           // multiplication of scalar by vector (scalar x vec)
+Vec3 operator*(double scalar, const Vec3& y){
     return y*scalar;
 }
 Vec3 cross(const Vec3& a, const Vec3& b){
@@ -70,72 +69,64 @@ double dot(const Vec3& a, const Vec3& b){
 /* atom class (AoS version kept for reference / original layout) */
 class Atom {
 public:
-    double mass;      // The mass of the atom in (U)
-    double ep;        // epsilon for LJ potential
-    double sigma;     // Sigma, somehow the size of the atom
-    double charge;    // charge of the atom (partial charge)
-    std::string name; // Name of the atom
-    // the position in (nm), velocity (nm/ps) and forces (k_BT/nm) of the atom
+    double mass;
+    double ep;
+    double sigma;
+    double charge;
+    std::string name;
     Vec3 p,v,f;
-    // constructor, takes parameters and allocates p, v and f properly
-    Atom(double mass, double ep, double sigma, double charge, std::string name) 
+    Atom(double mass, double ep, double sigma, double charge, std::string name)
     : mass{mass}, ep{ep}, sigma{sigma}, charge{charge}, name{name}, p{0,0,0}, v{0,0,0}, f{0,0,0}
     {}
 };
 
-/* class for the covalent bond between two atoms U=0.5k(r12-L0)^2 */
 class Bond {
 public:
-    double K;      // force constant
-    double L0;     // relaxed length
-    size_t a1, a2; // the indexes of the atoms at either end
+    double K;
+    double L0;
+    size_t a1, a2;
 };
 
-/* class for the angle between three atoms U=0.5K(phi123-phi0)^2 */
 class Angle {
 public:
     double K;
     double Phi0;
-    size_t a1, a2, a3; // the indexes of the three atoms, with a2 being the centre atom
+    size_t a1, a2, a3;
 };
 
-/* molecule class (AoS version kept for reference / original layout) */
 class Molecule {
 public:
-    std::vector<Atom> atoms;          // list of atoms in the molecule
-    std::vector<Bond> bonds;          // the bond potentials, eg for water the left and right bonds
-    std::vector<Angle> angles;        // the angle potentials, for water just the single one, but keep it a list for generality
-    std::vector<size_t> neighbours;   // indices of the neighbours
+    std::vector<Atom> atoms;
+    std::vector<Bond> bonds;
+    std::vector<Angle> angles;
+    std::vector<size_t> neighbours;
 };
 
 // ===============================================================================
-// Task 1: SoA layout (Structure-of-Arrays) so data for same atom-type is contiguous
+// Task 1: SoA layout (Structure-of-Arrays)
 // ===============================================================================
 
-/* atoms class, representing N instances of identical atoms (SoA block) */
 class Atoms {
 public:
-    double mass;      // The mass of the atom in (U)
-    double ep;        // epsilon for LJ potential
-    double sigma;     // Sigma, somehow the size of the atom
-    double charge;    // charge of the atom (partial charge)
-    std::string name; // Name of the atom
-    // SoA: p[i], v[i], f[i] are for molecule i (same atom-type)
+    double mass;
+    double ep;
+    double sigma;
+    double charge;
+    std::string name;
     std::vector<Vec3> p,v,f;
 
-    Atoms(double mass, double ep, double sigma, double charge, std::string name, size_t N_identical) 
-    : mass{mass}, ep{ep}, sigma{sigma}, charge{charge}, name{name}, 
+    Atoms(double mass, double ep, double sigma, double charge, std::string name, size_t N_identical)
+    : mass{mass}, ep{ep}, sigma{sigma}, charge{charge}, name{name},
       p{N_identical, {0,0,0}}, v{N_identical, {0,0,0}}, f{N_identical, {0,0,0}}
     {}
 };
 
-/* molecules container (SoA): holds atom blocks + topology + neighbour lists */
 class Molecules {
 public:
-    std::vector<Atoms> atoms;                     // atom blocks (O, H1, H2)
-    std::vector<Bond> bonds;                      // same bonds for each molecule
-    std::vector<Angle> angles;                    // same angles for each molecule
-    std::vector<std::vector<size_t>> neighbours;  // neighbours[i] for molecule i
+    std::vector<Atoms> atoms;
+    std::vector<Bond> bonds;
+    std::vector<Angle> angles;
+    std::vector<std::vector<size_t>> neighbours;
     size_t no_mol;
 
     Molecules(std::vector<Atoms> atoms, std::vector<Bond> bonds, std::vector<Angle> angles, size_t no_mol)
@@ -143,35 +134,29 @@ public:
     {}
 };
 
-// ===============================================================================
-
-/* system class */
 class System {
 public:
-    Molecules molecules; 
+    Molecules molecules;
     double time = 0;
 
-    // changed: System stores one SoA "Molecules" container instead of vector<Molecule>
-    // reason: forces/integrator will index into contiguous arrays (better cache/SIMD)
     explicit System(Molecules mols) : molecules(std::move(mols)) {}
 };
 
 class Sim_Configuration {
 public:
-    size_t steps = 10000;     // number of steps
-    size_t no_mol = 100;      // number of molecules
-    double dt = 0.0005;       // integrator time step
-    size_t data_period = 100; // how often to save coordinate to trajectory
-    std::string filename = "trajectory.txt";   // name of the output file with trajectory
+    size_t steps = 10000;
+    size_t no_mol = 100;
+    double dt = 0.0005;
+    size_t data_period = 100;
+    std::string filename = "trajectory.txt";
 
     Sim_Configuration(std::vector <std::string> argument){
         for (size_t i = 1; i<argument.size() ; i += 2){
             std::string arg = argument.at(i);
-            if(arg=="-h"){ // Write help
+            if(arg=="-h"){
                 std::cout << "MD -steps <number of steps> -no_mol <number of molecules>"
                           << " -fwrite <io frequency> -dt <size of timestep> -ofile <filename> \n";
                 exit(0);
-                break;
             } else if(arg=="-steps"){
                 steps = std::stoi(argument[i+1]);
             } else if(arg=="-no_mol"){
@@ -187,13 +172,11 @@ public:
             }
         }
 
-        dt /= 1.57350; /// convert to ps based on having energy in k_BT, and length in nm
+        dt /= 1.57350;
     }
 };
 
 // Build neighbour list (SoA version)
-// changed: use mol.no_mol and mol.atoms[0].p[i] (oxygen positions) instead of sys.molecules[i].atoms[0].p
-// reason: molecules are identified by index i; oxygen array is contiguous and represents molecule position well
 void BuildNeighborList(System& sys){
     Molecules& mol = sys.molecules;
     size_t N = mol.no_mol;
@@ -204,16 +187,19 @@ void BuildNeighborList(System& sys){
     for(size_t i = 0; i < N; i++){
         mol.neighbours[i].clear();
 
+        // Task 3 SIMD #1: independent j-loop (writes distances2[j], index[j])
+        #pragma omp simd
         for (size_t j = 0; j < N; j++) {
-            Vec3 dp = mol.atoms[0].p[i] - mol.atoms[0].p[j]; // SoA: O position in molecule i/j
+            Vec3 dp = mol.atoms[0].p[i] - mol.atoms[0].p[j];
             distances2[j] = dp.mag2();
             index[j] = j;
         }
+
         distances2[i] = 1e99;
 
         size_t target_num = std::min(nClosest, N - 1);
 
-        auto lambda_compare = [&](size_t &a, size_t &b) { return distances2[a] < distances2[b]; };
+        auto lambda_compare = [&](const size_t &a, const size_t &b) { return distances2[a] < distances2[b]; };
 
         std::partial_sort(index.begin(),
                           index.begin() + target_num,
@@ -233,9 +219,6 @@ void BuildNeighborList(System& sys){
     }
 }
 
-// Bond forces (SoA version)
-// changed: loop bonds once, then loop molecule index i and update A1.f[i], A2.f[i]
-// reason: bond topology is identical for every water molecule; SoA keeps A1/A2 arrays contiguous
 void UpdateBondForces(System& sys){
     Molecules& mol = sys.molecules;
 
@@ -243,6 +226,8 @@ void UpdateBondForces(System& sys){
         Atoms& A1 = mol.atoms[bond.a1];
         Atoms& A2 = mol.atoms[bond.a2];
 
+        // Task 3 SIMD #2: i-loop is independent; checksum needs reduction
+        #pragma omp simd reduction(+:accumulated_forces_bond)
         for (size_t i = 0; i < mol.no_mol; i++){
             Vec3 dp  = A1.p[i] - A2.p[i];
             Vec3 f   = -bond.K*(1 - bond.L0/dp.mag())*dp;
@@ -253,9 +238,6 @@ void UpdateBondForces(System& sys){
     }
 }
 
-// Angle forces (SoA version)
-// changed: same idea as bonds, but with 3 atom blocks A1/A2/A3 and index i
-// reason: identical angle topology per molecule; SoA gives tight loops over i
 void UpdateAngleForces(System& sys){
     Molecules& mol = sys.molecules;
 
@@ -264,6 +246,8 @@ void UpdateAngleForces(System& sys){
         Atoms& A2 = mol.atoms[angle.a2];
         Atoms& A3 = mol.atoms[angle.a3];
 
+        // Task 3 SIMD #3: i-loop is independent; checksum needs reduction
+        #pragma omp simd reduction(+:accumulated_forces_angle)
         for (size_t i = 0; i < mol.no_mol; i++){
             Vec3 d21 = A2.p[i] - A1.p[i];
             Vec3 d23 = A2.p[i] - A3.p[i];
@@ -291,9 +275,6 @@ void UpdateAngleForces(System& sys){
     }
 }
 
-// Non-bonded forces (SoA version)
-// changed: loop over atom-types a,b instead of per-molecule atom vectors; use p[i] and p[j]
-// reason: there is no "molecule.atoms" container anymore; atom blocks store all positions/forces in arrays
 void UpdateNonBondedForces(System& sys){
     Molecules& mol = sys.molecules;
     double KC = 80*0.7;
@@ -309,7 +290,7 @@ void UpdateNonBondedForces(System& sys){
         double sigma2 = pow(0.5*(atom1.sigma+atom2.sigma),2);
         double q = KC*atom1.charge * atom2.charge;
 
-        Vec3 dp = atom1.p[i] - atom2.p[j];   // SoA indexing: molecule i vs neighbour molecule j
+        Vec3 dp = atom1.p[i] - atom2.p[j];
         double r2 = dp.mag2();
         double r  = sqrt(r2);
 
@@ -318,38 +299,35 @@ void UpdateNonBondedForces(System& sys){
 
         Vec3 f = (ep*(12*sir3*sir3-6*sir3)*sir + q/(r*r2))*dp;
 
-        atom1.f[i] += f;   // force on molecule i, atom-type a
-        atom2.f[j] -= f;   // equal/opposite on molecule j, atom-type b
+        atom1.f[i] += f;
+        atom2.f[j] -= f;
         accumulated_forces_non_bond += f.mag();
     }
 }
 
-// Integrator (SoA version)
-// changed: loop atom blocks then loop i, updating v[i], p[i], resetting f[i]
-// reason: makes the inner loop contiguous in memory (good cache / vectorization)
 void UpdateKDK(System &sys, Sim_Configuration &sc){
     Molecules& mol = sys.molecules;
 
-    for (auto& atom : mol.atoms)
-    for (size_t i = 0; i < mol.no_mol; i++){
-        atom.v[i] += sc.dt/atom.mass*atom.f[i];
-        atom.f[i]  = {0,0,0};
-        atom.p[i] += sc.dt*atom.v[i];
+    for (auto& atom : mol.atoms) {
+        // Task 3 SIMD #4: contiguous i-loop per atom block
+        #pragma omp simd
+        for (size_t i = 0; i < mol.no_mol; i++){
+            atom.v[i] += sc.dt/atom.mass*atom.f[i];
+            atom.f[i]  = {0,0,0};
+            atom.p[i] += sc.dt*atom.v[i];
+        }
     }
 
     sys.time += sc.dt;
 }
 
-// Setup water system (SoA version)
-// changed: allocate 3 Atoms blocks sized N_molecules, then fill mols.atoms[type].p[i]
-// reason: SoA expects "all O", "all H1", "all H2" stored contiguously instead of per-molecule objects
 System MakeWater(size_t N_molecules){
     const double L0 = 0.09584;
     const double angle = 104.45*deg2rad;
 
-    Atoms O(16, 0.65,    0.31,  -0.82, "O", N_molecules);
-    Atoms H1( 1, 0.18828, 0.238, 0.41, "H", N_molecules);
-    Atoms H2( 1, 0.18828, 0.238, 0.41, "H", N_molecules);
+    Atoms O(16, 0.65,     0.31,  -0.82, "O", N_molecules);
+    Atoms H1( 1, 0.18828, 0.238,  0.41, "H", N_molecules);
+    Atoms H2( 1, 0.18828, 0.238,  0.41, "H", N_molecules);
 
     std::vector<Bond> waterbonds = {
         { .K = 20000, .L0 = L0, .a1 = 0, .a2 = 1},
@@ -383,9 +361,6 @@ System MakeWater(size_t N_molecules){
     return System(std::move(mols));
 }
 
-// Output (SoA version)
-// changed: loop molecule index i, then atom block a, write atom.p[i]
-// reason: atoms are stored by type; molecule i is the i-th entry in each block
 void WriteOutput(System& sys, std::ofstream& file){
     Molecules& mol = sys.molecules;
 
@@ -399,40 +374,32 @@ void WriteOutput(System& sys, std::ofstream& file){
     }
 }
 
-//======================================================================================================
-//======================== Main function ===============================================================
-//======================================================================================================
-int main(int argc, char* argv[]){    
-    Sim_Configuration sc({argv, argv+argc}); // Load the system configuration from command line data
-    
-    System sys  = MakeWater(sc.no_mol);   // SoA system with sc.no_mol molecules
-    std::ofstream file(sc.filename); // open file
+int main(int argc, char* argv[]){
+    Sim_Configuration sc({argv, argv+argc});
 
-    WriteOutput(sys, file);    // writing the initial configuration in the trajectory file
-    
-    auto tstart = std::chrono::high_resolution_clock::now(); // start time (nano-seconds)
+    System sys  = MakeWater(sc.no_mol);
+    std::ofstream file(sc.filename);
+
+    WriteOutput(sys, file);
+
+    auto tstart = std::chrono::high_resolution_clock::now();
 
     for (size_t step = 0; step < sc.steps; step++){
-        // BuildNeighborList every 100th step
         if (step % 100 == 0)
             BuildNeighborList(sys);
 
-        // Always evolve the system
         UpdateBondForces(sys);
         UpdateAngleForces(sys);
         UpdateNonBondedForces(sys);
         UpdateKDK(sys, sc);
 
-        // Write output every data_period steps
         if (step % sc.data_period == 0)
-        {
             WriteOutput(sys, file);
-        }
     }
 
-    auto tend = std::chrono::high_resolution_clock::now(); // end time (nano-seconds)
+    auto tend = std::chrono::high_resolution_clock::now();
 
-    std::cout <<  "Accumulated forces Bonds   : "  << std::setw(9) << std::setprecision(5) 
+    std::cout <<  "Accumulated forces Bonds   : "  << std::setw(9) << std::setprecision(5)
               << accumulated_forces_bond << "\n";
     std::cout <<  "Accumulated forces Angles  : "  << std::setw(9) << std::setprecision(5)
               << accumulated_forces_angle << "\n";

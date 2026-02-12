@@ -1,0 +1,21 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 85.44     77.26    77.26        2    38.63    38.63  BuildNeighborList(System&)
+ 11.06     87.26    10.00      200     0.05     0.05  UpdateNonBondedForces(System&)
+  1.14     88.29     1.03      200     0.01     0.01  UpdateAngleForces(System&)
+  1.06     89.25     0.96      200     0.00     0.00  UpdateBondForces(System&)
+  0.91     90.07     0.82 354403000     0.00     0.00  operator*(double, Vec3 const&)
+  0.23     90.28     0.21      200     0.00     0.00  UpdateKDK(System&, Sim_Configuration&)
+  0.11     90.38     0.10 24000000     0.00     0.00  cross(Vec3 const&, Vec3 const&)
+  0.04     90.42     0.04  8000000     0.00     0.00  dot(Vec3 const&, Vec3 const&)
+  0.01     90.43     0.01        1     0.01     0.01  MakeWater(unsigned long)
+  0.00     90.43     0.00        3     0.00     0.00  int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)
+  0.00     90.43     0.00        2     0.00     0.00  WriteOutput(System&, std::basic_ofstream<char, std::char_traits<char> >&)
+  0.00     90.43     0.00        1     0.00     0.00  Sim_Configuration::Sim_Configuration(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >)
+  0.00     90.43     0.00        1     0.00     0.00  std::vector<Molecule, std::allocator<Molecule> >::~vector()
+  0.00     90.43     0.00        1     0.00     0.00  std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::vector<char**, void>(char**, char**, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&)
+  0.00     90.43     0.00        1     0.00     0.00  std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()
+  0.00     90.43     0.00        1     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose()

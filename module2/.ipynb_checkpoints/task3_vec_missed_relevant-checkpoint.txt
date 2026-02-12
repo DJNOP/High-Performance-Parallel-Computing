@@ -1,0 +1,30 @@
+Water_vectorised_SIMD.cpp:225:27: missed: couldn't vectorize loop
+Water_vectorised_SIMD.cpp:225:27: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+Water_vectorised_SIMD.cpp:244:29: missed: couldn't vectorize loop
+Water_vectorised_SIMD.cpp:244:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+Water_vectorised_SIMD.cpp:282:26: missed: couldn't vectorize loop
+Water_vectorised_SIMD.cpp:282:26: missed: not vectorized: multiple nested loops.
+Water_vectorised_SIMD.cpp:283:36: missed: couldn't vectorize loop
+Water_vectorised_SIMD.cpp:283:36: missed: not vectorized: multiple nested loops.
+Water_vectorised_SIMD.cpp:284:26: missed: couldn't vectorize loop
+Water_vectorised_SIMD.cpp:284:26: missed: not vectorized: control flow in loop.
+Water_vectorised_SIMD.cpp:285:26: missed: couldn't vectorize loop
+Water_vectorised_SIMD.cpp:41:11: missed: not vectorized: complicated access pattern.
+Water_vectorised_SIMD.cpp:311:27: missed: couldn't vectorize loop
+Water_vectorised_SIMD.cpp:316:24: missed: not vectorized: more than one data ref in stmt: *_53 = D.210681[_15];
+Water_vectorised_SIMD.cpp:316:24: missed: not vectorized: more than one data ref in stmt: *_53 = D.210681[_15];
+Water_vectorised_SIMD.cpp:316:24: missed: not vectorized: more than one data ref in stmt: *_53 = D.210681[0];
+Water_vectorised_SIMD.cpp:368:26: missed: couldn't vectorize loop
+Water_vectorised_SIMD.cpp:368:26: missed: not vectorized: control flow in loop.
+Water_vectorised_SIMD.cpp:368:26: missed: couldn't vectorize loop
+Water_vectorised_SIMD.cpp:368:26: missed: not vectorized: control flow in loop.
+Water_vectorised_SIMD.cpp:346:26: missed: couldn't vectorize loop
+Water_vectorised_SIMD.cpp:346:26: missed: not vectorized: latch block not empty.
+Water_vectorised_SIMD.cpp:341:68: missed: couldn't vectorize loop
+Water_vectorised_SIMD.cpp:341:68: missed: not vectorized: control flow in loop.
+Water_vectorised_SIMD.cpp:109:7: missed: couldn't vectorize loop
+Water_vectorised_SIMD.cpp:109:7: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+Water_vectorised_SIMD.cpp:109:7: missed: couldn't vectorize loop
+Water_vectorised_SIMD.cpp:109:7: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+Water_vectorised_SIMD.cpp:388:18: missed: couldn't vectorize loop
+Water_vectorised_SIMD.cpp:388:18: missed: not vectorized: control flow in loop.

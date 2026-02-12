@@ -1,0 +1,24 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 53.67     15.78    15.78        2     7.89     7.89  BuildNeighborList(System&)
+ 37.21     26.72    10.94      200     0.05     0.06  UpdateNonBondedForces(System&)
+  4.49     28.04     1.32 354403000     0.00     0.00  operator*(double, Vec3 const&)
+  1.90     28.60     0.56      200     0.00     0.00  UpdateAngleForces(System&)
+  1.63     29.08     0.48      200     0.00     0.00  UpdateBondForces(System&)
+  0.58     29.25     0.17      200     0.00     0.00  UpdateKDK(System&, Sim_Configuration&)
+  0.27     29.33     0.08 24000000     0.00     0.00  cross(Vec3 const&, Vec3 const&)
+  0.14     29.37     0.04  8000000     0.00     0.00  dot(Vec3 const&, Vec3 const&)
+  0.10     29.40     0.03        9     0.00     0.00  Atoms::Atoms(Atoms const&)
+  0.00     29.40     0.00        3     0.00     0.00  Atoms::Atoms(double, double, double, double, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long)
+  0.00     29.40     0.00        3     0.00     0.00  Molecules::~Molecules()
+  0.00     29.40     0.00        3     0.00     0.00  int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)
+  0.00     29.40     0.00        2     0.00     0.00  WriteOutput(System&, std::basic_ofstream<char, std::char_traits<char> >&)
+  0.00     29.40     0.00        1     0.00     0.03  MakeWater(unsigned long)
+  0.00     29.40     0.00        1     0.00     0.00  Sim_Configuration::Sim_Configuration(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >)
+  0.00     29.40     0.00        1     0.00     0.01  Molecules::Molecules(std::vector<Atoms, std::allocator<Atoms> >, std::vector<Bond, std::allocator<Bond> >, std::vector<Angle, std::allocator<Angle> >, unsigned long)
+  0.00     29.40     0.00        1     0.00     0.00  std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::vector<char**, void>(char**, char**, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&)
+  0.00     29.40     0.00        1     0.00     0.00  std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()
+  0.00     29.40     0.00        1     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose()
