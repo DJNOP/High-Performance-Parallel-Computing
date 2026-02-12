@@ -48,7 +48,7 @@ int main(int argc, char* argv[]) {
     std::vector<double> state = {susceptible, infected, immune};
 
     // Timestep size
-    double dt = 0.1;
+    double dt = 20;
     if (argc >= 2) {
         dt = std::stod(argv[1]);
     }
@@ -57,7 +57,7 @@ int main(int argc, char* argv[]) {
     double t_end = 200.0;
 
     // write output every 1 day
-    double write_dt = 1;
+    double write_dt = 20;
 
     // How many Euler steps correspond to write_dt?
     double ratio = write_dt / dt;
