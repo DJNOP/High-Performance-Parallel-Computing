@@ -1,0 +1,3 @@
+Accumulated forces Bonds   : 7.3852e+06
+Accumulated forces Angles  : 4.4506e+06
+Accumulated forces Non-bond: 1.044e+08

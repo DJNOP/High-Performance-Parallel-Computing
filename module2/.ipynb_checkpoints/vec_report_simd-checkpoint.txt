@@ -1,0 +1,267 @@
+Water_vectorised_SIMD.cpp:21:41: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:21:41: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:1129:34: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/vector.tcc:521:30: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/vector.tcc:521:30: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:230:17: optimized: loop vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:250:17: optimized: loop vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:153:58: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:642:19: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_construct.h:119:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_construct.h:119:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_construct.h:119:7: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:335:5: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:335:5: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:335:5: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:335:5: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_algobase.h:398:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_algobase.h:398:4: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:106:4: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:21:41: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:21:41: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:1129:34: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/vector.tcc:521:30: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/vector.tcc:521:30: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:230:17: optimized: loop vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:250:17: optimized: loop vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:153:58: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:642:19: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_construct.h:119:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_construct.h:119:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_construct.h:119:7: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:335:5: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:335:5: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:335:5: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:335:5: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_algobase.h:398:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_algobase.h:398:4: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:106:4: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:21:41: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:21:41: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:1129:34: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/vector.tcc:521:30: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/vector.tcc:521:30: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:230:17: optimized: loop vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:250:17: optimized: loop vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:41:11: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:153:58: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:642:19: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_uninitialized.h:266:15: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_construct.h:119:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_construct.h:119:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:398:25: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_construct.h:119:7: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:335:5: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:335:5: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:335:5: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:335:5: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_algobase.h:398:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_algobase.h:398:4: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+Water_vectorised_SIMD.cpp:109:7: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/13/bits/stl_vector.h:106:4: optimized: basic block part vectorized using 16 byte vectors
