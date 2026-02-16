@@ -59,7 +59,7 @@ Data read_data() {
         std::string element;
         std::array<double,8> data;
 
-        // read in one line of data in to class
+        // read in one line of data in to class        
         std::getline(iss, element, ','); // line counter, skip it
         std::getline(iss, element, ','); // averageInteractionsPerCrossing
         data[0] = std::stod(element);
@@ -67,7 +67,7 @@ Data read_data() {
         ds.NvtxReco.push_back(std::stol(element));
         std::getline(iss, element, ','); // p_nTracks
         ds.p_nTracks.push_back(std::stol(element));
-        // Load in a loop the 7 next data points:
+        // Load in a loop the 7 next data points: 
         // p_Rhad, p_Rhad1, p_TRTTrackOccupancy, p_topoetcone40, p_eTileGap3Cluster, p_phiModCalo, p_etaModCalo
         for(int i=1; i<8; i++) {
             std::getline(iss, element, ',');
@@ -96,7 +96,7 @@ Data read_data() {
         ds.means_sig[i]  = ds.means_sig[i] / nsig;
         ds.means_bckg[i] = ds.means_bckg[i] / nbckg;
     }
-
+    
     // check for flip and change sign of data and means if needed
     for(int i=0; i<8; i++) {
         ds.flip[i]= (ds.means_bckg[i] < ds.means_sig[i]) ? -1 : 1;
@@ -131,7 +131,7 @@ void master (int nworker, Data& ds) {
         for (int j=0; j<n_cuts; j++)
             ranges[j][i] = ds.means_sig[i] + j * (ds.means_bckg[i] - ds.means_sig[i]) / n_cuts;
     }
-
+    
     // generate list of all permutations of the cuts for each channel
     std::vector<std::array<double,8>> settings(n_settings);
     for (long k=0; k<n_settings; k++) {
@@ -156,62 +156,11 @@ void master (int nworker, Data& ds) {
     The master should pass a set of settings to a worker, and the worker should return the accuracy
     */
 
-    const int TAG_WORK   = 1; // master -> worker: [task_id, 8x cut values] as doubles
-    const int TAG_STOP   = 2; // master -> worker: stop
-    const int TAG_RESULT = 3; // worker -> master: [task_id, accuracy] as doubles
-
-    long next_task = 0;
-    long done = 0;
-
-    auto make_work_msg = [&](long task_id, std::array<double,9>& msg) {
-        msg[0] = static_cast<double>(task_id);
-        for (int i = 0; i < 8; ++i) msg[i+1] = settings[task_id][i];
-    };
-
-    // initial dispatch
-    for (int worker = 1; worker <= nworker; ++worker) {
-        if (next_task < n_settings) {
-            std::array<double,9> msg;
-            make_work_msg(next_task, msg);
-            MPI_Send(msg.data(), 9, MPI_DOUBLE, worker, TAG_WORK, MPI_COMM_WORLD);
-            ++next_task;
-        } else {
-            std::array<double,9> msg;
-            msg.fill(0.0);
-            msg[0] = static_cast<double>(NO_MORE_TASKS);
-            MPI_Send(msg.data(), 9, MPI_DOUBLE, worker, TAG_STOP, MPI_COMM_WORLD);
-        }
-    }
-
-    // farm loop
-    while (done < n_settings) {
-        MPI_Status status;
-        std::array<double,2> res;
-
-        MPI_Recv(res.data(), 2, MPI_DOUBLE, MPI_ANY_SOURCE, TAG_RESULT, MPI_COMM_WORLD, &status);
-
-        const int worker = status.MPI_SOURCE;
-        const long task_id = static_cast<long>(res[0]);
-        const double acc = res[1];
-
-        if (0 <= task_id && task_id < n_settings) {
-            accuracy[task_id] = acc;
-            ++done;
-        }
-
-        if (next_task < n_settings) {
-            std::array<double,9> msg;
-            make_work_msg(next_task, msg);
-            MPI_Send(msg.data(), 9, MPI_DOUBLE, worker, TAG_WORK, MPI_COMM_WORLD);
-            ++next_task;
-        } else {
-            std::array<double,9> msg;
-            msg.fill(0.0);
-            msg[0] = static_cast<double>(NO_MORE_TASKS);
-            MPI_Send(msg.data(), 9, MPI_DOUBLE, worker, TAG_STOP, MPI_COMM_WORLD);
-        }
-    }
-
+    // THIS CODE SHOULD BE REPLACED BY TASK FARM
+    // loop over all possible cuts and evaluate accuracy
+    for (long k=0; k<n_settings; k++)
+        accuracy[k] = task_function(settings[k], ds);
+    // THIS CODE SHOULD BE REPLACED BY TASK FARM
     // ================================================================
 
     auto tend = std::chrono::high_resolution_clock::now(); // end time (nano-seconds)
@@ -224,12 +173,12 @@ void master (int nworker, Data& ds) {
             best_accuracy_score = accuracy[k];
             idx_best = k;
         }
-
+    
     std::cout << "Best accuracy obtained :" << best_accuracy_score << "\n";
     std::cout << "Final cuts :\n";
     for (int i=0; i<8; i++)
         std::cout << std::setw(30) << ds.name[i] << " : " << settings[idx_best][i]*ds.flip[i] << "\n";
-
+    
     std::cout <<  "\n";
     std::cout <<  "Number of settings:" << std::setw(9) << n_settings << "\n";
     std::cout <<  "Elapsed time      :" << std::setw(9) << std::setprecision(4)
@@ -243,31 +192,6 @@ void worker (int rank, Data& ds) {
     IMPLEMENT HERE THE CODE FOR THE WORKER
     Use a call to "task_function" to complete a task and return accuracy to master.
     */
-
-    const int TAG_WORK   = 1;
-    const int TAG_STOP   = 2;
-    const int TAG_RESULT = 3;
-
-    while (true) {
-        MPI_Status status;
-        std::array<double,9> msg;
-
-        MPI_Recv(msg.data(), 9, MPI_DOUBLE, 0, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
-
-        const long task_id = static_cast<long>(msg[0]);
-
-        if (status.MPI_TAG == TAG_STOP || task_id == NO_MORE_TASKS || task_id >= n_settings) {
-            break;
-        }
-
-        std::array<double,8> setting;
-        for (int i = 0; i < 8; ++i) setting[i] = msg[i+1];
-
-        const double acc = task_function(setting, ds);
-
-        std::array<double,2> res = { static_cast<double>(task_id), acc };
-        MPI_Send(res.data(), 2, MPI_DOUBLE, 0, TAG_RESULT, MPI_COMM_WORLD);
-    }
 }
 
 int main(int argc, char *argv[]) {
